@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<h1 id=text></h1>
+		<script type="text/javascript">
+		//java
+		//avajay
+		//get first char of str, move to end of str
+		//1 - get first char of string
+		//2 - get str w/o first char
+		//3 - move first char behind str w/o first char
+		//add 'ay' to end of str
+		//display on webpage
+		var word = prompt("What is your name?");
+		var piglatin = word.slice(1, word.length) + word.charAt(0) + 'ay';
+
+		document.getElementById('text').innerHTML = piglatin;
+		</script>
+
+	</body>
+</html>
