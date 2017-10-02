@@ -8,12 +8,17 @@
 	
 
 	<script type="text/javascript">
+		//Add fruit to webpage.
 		
 		var input = prompt("Add more fruit")
 		var fruits = ['apple', 'orange', 'kiwi']
+		//takes input for fruit and pushes  it to fruits array
 		fruits.push(input)
+		//sorts fruits array alphabetically and returns it to console
 		fruits.sort()
+		//returns fruits array to console
 		console.log(fruits)
+		//uses function to access HTML elements and display on webpage id "text"
 		document.getElementById('text').innerHTML = fruits.join (' with ')
 	</script>
 

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	<!--
+	Step 1- Put style in head
+	!-->
+
+	<style type="text/css">
+
+		th{
+			height: 200px;
+			width: 200px;
+			font-size: 100px
+		}
+	</style>
+	</head>
+	<body>
+		<table align = center border ="5">
+			<tr>
+				<!-- 
+
+				!-->	
+				<th id="square0" onclick="clickSquare(this)"></th>
+				<th id="square1" onclick="clickSquare(this)"></th>
+				<th id="square2" onclick="clickSquare(this)"></th>
+			</tr>
+			<tr>
+				<th id="square3" onclick="clickSquare(this)"></th>
+				<th id="square4" onclick="clickSquare(this)"></th>
+				<th id="square5" onclick="clickSquare(this)"></th>
+			</tr>
+			<tr>
+				<th id="square6" onclick="clickSquare(this)"></th>
+				<th id="square7" onclick="clickSquare(this)"></th>
+				<th id="square8" onclick="clickSquare(this)"></th>
+			</tr>
+		</table>
+
+		<script type="text/javascript">
+			//empty strings to represent squares on grid
+			var board = [
+			'', '', '',
+			'', '', '',
+			'', '', '',
+			]
+			var player = 'X'; //assigns value of player(variable) as 'X'
+
+			//square as parameter/placeholder
+			function clickSquare(square){
+				if(square.innerHTML == ''){
+					square.innerHTML = player; 
+					//displays w/e the value is for the variable player
+					var i = square.id.charAt(square.id.length-1);
+					//Step 2 (click to see which index): console.log(i);
+					board[i] = player;
+
+					player = (player == 'X') ? 'O' : 'X'; 
+					// the "?" checks the condition and ASKS what is the value of X and the ":" changes value to O if the value is 'X'
+					//Step: console.log(square);
+					evalBoard();
+				}
+
+			}
+
+			function evalBoard(argument) {
+				//body...
+				if(board[0] != '' && board[0] == board[1] && board[0] == board[2]){
+					console.log(' WINNER IS ' + board[0]);
+
+				}else if(board[3] != '' && board[3] == board[4] && board[3] == board[5]){
+					console.log(' WINNER IS ' + board[3]);
+				}else if(board[6] != '' && board[6] == board[7] && board[8] == board[6]){
+					console.log(' WINNER IS ' + board[6]);
+				}else if(board[0] != '' && board[3] == board[6] && board[0] == board[3]){
+					console.log(' WINNER IS ' + board[0]);
+				}else if(board[1] != '' && board[4] == board[7] && board[1] == board[4]){
+					console.log(' WINNER IS ' + board[1]);
+				}else if(board[2] != '' && board[5] == board[8] && board[2] == board[5]){
+					console.log(' WINNER IS ' + board[6]);
+				}else if(board[0] != '' && board[4] == board[8] && board[0] == board[4]){
+					console.log(' WINNER IS ' + board[0]);
+				}else if(board[2] != '' && board[4] == board[6] && board[2] == board[4]){
+					console.log(' WINNER IS ' + board[2]);
+				}
+			}
+		</script>
+
+	</body>
+</html>

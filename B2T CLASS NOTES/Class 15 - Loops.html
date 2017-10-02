@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+
+		<ul id="list"></ul>
+		<ul>
+			<li>
+				<h1></h1>
+			</li>
+		</ul>
+
+
+		<script type="text/javascript">
+			/*var input = prompt();
+			
+			if (input < 13)
+				console.log('WooHoo');
+			}else{
+				console.log('BooHoo')
+			}
+
+			if (input % 2 == 0){
+				console.log(input + ' is even');
+			}else{
+				console.log(input + ' is odd');
+			}*/
+
+			// II. While Loop,  i - stands for index 
+			var i = 1; // INITIALIZATION
+			while(i <= 5){ //CONDITION
+				console.log(i); 
+				//i = i + 1;
+				i++; //INCRAMENTATION
+			}
+
+			console.log('------------------------')// to know the difference between loops
+
+
+			var j = 100;
+			while(j >= -20){
+				console.log(j);
+				j-=3
+			}
+
+			var k = 0
+			while (k <= 99){
+				
+				if(k % 3 == 0){
+					console.log(k);
+				}
+				k++;
+			}
+
+			console.log('---------------------------')
+			/*
+			//incrementing by numbers greater than 1
+			//i = i + 2;
+
+			// III. For Loop
+			for(var l = 1; l <= 100; l++){
+				console.log(l);
+			}
+			*/
+			console.log('-----------------------------')
+
+
+			//TO LOOP AN ARRAY (BELOW)
+			var fruits = ['apple', 'grape', 'banana', 'mango', 'peach', 'pear'];
+			for (var l = 0; l < fruits.length; l++){
+				console.log(fruits[l]);
+				var li = document.createElement('li'); 
+				li.innerHTML = fruits[l]; 
+				document.getElementById('list').appendChild(li);  // Create NEW List Item(element)
+			}
+
+			//For/in Loop - loops through array and gives every element 
+			var planets = ['Murcury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'X'];
+			for(var m in planets){
+				console.log(i + " is the index and " + planets[i] + " is the element ")
+			}
+
+
+
+		</script>
+
+	</body>
+</html>

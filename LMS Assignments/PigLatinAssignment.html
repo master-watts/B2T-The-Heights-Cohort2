@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+
+	<h1 id=text></h1> 
+	<!--
+	get first char of str, move to end of str
+	Step 1 - get first char of string i.e 
+	Step 2 - get str w/o first char
+	Step 3 - move first char behind str w/o first char
+	Step 4 - add 'ay' to end of str
+	Step 5 - use "<h1></h1>"" to display text on webpage
+	
+	!-->
+	<script type="text/javascript">
+		var word = prompt("What is your name?")
+		// This is where I slice the str starting with index 1 which excludes the first character, then I concatenate the first idex on the end of the str + the word "ay"
+		var piglatin = word.slice(1, word.length) + word.charAt(0) + 'ay';
+
+		//BELOW, is where we access HTML elements using the DOM to have the code display on the webpage by calling on the ID name "text"
+
+		document.getElementById('text').innerHTML = piglatin;
+
+	</script>
+
+	</body>
+</html>

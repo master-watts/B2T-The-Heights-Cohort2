@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+	<script type="text/javascript">
+		//Find the largest number and display to webpage
+		//Step 1- get 3 numbers from user using prompt
+		//Step 2- create "if...else" conditional statement determining the largest number
+		//Step 3- use console.log to return answer
+		
+		//get 3 numbers and place in variable x, y and z 
+		var x = parseInt(prompt('Enter number'));
+		var y = parseInt(prompt('Enter number'));
+		var z = parseInt(prompt('Enter number'));
+
+		//creates the condition is x is the largest
+		if(x > y && x > z){
+			console.log(x + " is the largest number");
+		}
+		//if not x, then y is the largest
+		else if(y > z){
+			console.log(y + " is the largest number");
+		}
+		//in not y or x, then z has to be the largest
+		else{
+			console.log(z + " is the largest number")
+		}
+
+
+	</script>
+	</body>
+</html>

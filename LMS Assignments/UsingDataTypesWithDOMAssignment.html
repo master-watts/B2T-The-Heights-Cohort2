@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+	
+		<!--
+		Step 1. Create variable to grab data from prompt
+		Step 2. Return "Hello my name is" + data 
+		Step 3. Display on webpage using <h1></h1> element
+		-->
+
+		<h1 id="name"></h1>
+
+		<script type="text/javascript">
+			//this prompt asks for the users name 
+			var name = prompt("Enter your name");
+			//this script takes the data entered from the name prompt,accesses HTML, then returns the statement and the id "name" located in the h1 element  
+			document.getElementById("name").innerHTML = "Hello my name is " + name;
+
+		</script>
+
+
+</body>
+</html>
