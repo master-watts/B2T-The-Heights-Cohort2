@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body onload="fruitsPush()">
+		
+		<input type="button" value="Click Me" onclick="clickButton()">
+		<input type="submit" value="Submit" onclick="clickButton()" 
+		<br>
+		<input id="name" type="text" onchange="displayName()">
+		<input type="button" value="Display Name" onclick="displayName()"> 
+		<h4 id="display"></h4>
+		<input type= "button" value=" Add More fruit " onclick="fruitsPush()">
+
+		<script type="text/javascript">
+			//DECLARING A FUNCTION
+			//Step 1- Create function "sayHello"
+			//Step 2- Call function i.e. "sayHello();" can be called from anywhere 
+			//Step 3- create parameter ex. "name" (like place holder for user)
+
+			//CREATING BUTTONS USING FUNCTIONS
+			// 1- Create fuction "clickButton" and event listener "on click"  value is text that shows up on button
+			// 2 - Create input type for button outside of script for button element 
+			// 3
+
+			//Event Listners:
+			//1- on click
+			//2- on change
+			//3- on load
+
+			var fruits = ['apple', 'mango', 'banana'];
+			function fruitsPush(){
+				fruits.push(prompt('Enter fruit').toLowerCase());
+				fruits.sort();
+				document.getElementById('display').innerHTML = fruits.join(' with ')
+			}
+
+			function displayName(){
+				var name = document.getElementById('name').value;
+				document.getElementById('display').innerHTML = name;
+			}
+
+			function clickButton(){
+				console.log(' Owww that hurt ');
+			}
+			function sayHello(name, age){ // name function with camel casing, same rules apply as a variable
+				console.log(' Hello ' + name + ', you are ' + age);
+			}
+
+			sayHello(' Trey ', 54);
+			sayHello(' Jim ', 89);
+			sayHello(' Sue ', 14);
+			sayHello(prompt(' Enter your name'), prompt('Enter your age'));
+
+			//FUNCTION EXPRESSION (BELOW)
+			//
+
+			var sayHelloPt2 = function (){
+				console.log('Hello World');
+			}
+
+			sayHelloPt2('Hello World');
+
+		</script>
+	</body>
+</html>

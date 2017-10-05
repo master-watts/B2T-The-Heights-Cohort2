@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="Start Game" onclick="dealCards()">
+		<input type="button" value="HIT" onclick="dealHit()">
+		<input type="value" value="WINNER" onchange="evalBoard()">
+		<input type="button" value="STAY" onclick="keepHand()">
+
+
+
+
+		<h1 id="dealersHand"></h1>
+		<h1 id="playersHand"></h1>
+
+		<script type="text/javascript">
+				var deck = ['A','2','3','4','5','6','7','8','9','10','J','Q','K']
+				var dealer = []
+				var player = []
+			
+
+			
+			function dealCards(){
+				//creates 2 empty arrays for dealer/player hands
+			 	dealer = []
+			 	player = []
+				
+				//gets 4 random numbers and saves in 4 different variables
+				var num1 = parseInt(Math.random()*13)
+				var num2 = parseInt(Math.random()*13)
+				var num3 = parseInt(Math.random()*13)
+				var num4 = parseInt(Math.random()*13)
+				
+				//pushes 2 random numbers to dealer/player hand 
+				dealer.push(deck[num1])
+				dealer.push(deck[num2])
+				player.push(deck[num3])
+				player.push(deck[num4])
+
+
+				//display both dealer/player hand with 2 random numbers from deck array  
+				document.getElementById('dealersHand').innerHTML = dealer.toString()
+				document.getElementById('playersHand').innerHTML = player.toString()
+				
+			}
+
+			
+			function dealHit(){
+				//gets 1 random number
+				var num5 = parseInt(Math.random()*13)
+				player.push(deck[num5])
+				document.getElementById('playersHand').innerHTML = player.toString()
+			}
+
+			
+			function keepHand(){
+				if(player[sum] <= 21 && player[sum] > dealer[sum]){
+					document.getElementById('display').innerHTML = ('YOU WIN')
+				}else if(player[sum] <= 21 && player[sum] < dealer[sum]){
+					document.getElementById('display').innerHTML = ('YOU LOSE')
+				}else if(player[sum] > 21)
+					document.getElementById('display').innerHTML = ('YOU BUST')
+			}
+			
+			function evalBoard(){
+				    var total = 0;
+				    //while(sum <= 21){
+				    for (var i = 0; i < deck.length; i++){
+				    total += deck[i]
+						if(deck[i] == 'K'){
+							total += 10
+							player.push(total)
+							//player.push(sum)
+							//document.getElementById('playersHand').innerHTML =
+						}else if(deck[i] == 'Q' ){
+							sum += 10
+							player.push(sum)
+							//document.getElementById('playersHand').innerHTML = player.toString()
+						}else if(deck[i] == 'J'){
+							sum += 10
+							player.push(sum)
+						}else if(deck[i] == '3'){
+							sum += 3
+							player.push(sum)
+						}else if(deck[i] == '4'){
+							sum += 4
+							player.push(sum)
+						}else if(deck[i] == '5'){
+							sum += 5
+							player.push(sum)
+						}else if(deck[i] == '6'){
+							sum += 6
+							player.push(sum)
+						}else if(deck[i] == '7'){
+							sum += 7
+							player.push(sum)
+						}else if(deck[i] == '8'){
+							sum += 8
+							player.push(sum)
+						}else if(deck[i] == '9'){
+							sum += 9
+							player.push(sum)
+						}else 
+							sum += 10
+							player.push(sum)
+					}
+
+
+
+
+					//while (player[0] + player[1] + player[2] + player[3] <= 21)
+					
+			}
+
+			//OPTIONS TO WIN:
+			/*
+			AK
+			AQ
+			AJ
+			A10
+			*/
+		</script>
+
+	</body>
+</html>

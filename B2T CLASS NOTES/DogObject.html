@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		Name:<input type="text" id="inputName">
+		<br>
+		Breed:<input type="text" id="inputBreed">
+		<br>
+		Height:<input type="number" id="inputHeight">
+		<br>
+		Weight:<input type="number" id="inputWeight">
+		<br>
+
+		<input type="button" value="Add New Object" onclick="makeObject()">
+
+		<input type="button" value="Display Dog List" onclick="displayDogList()">
+
+		<h1 id="display"></h1>
+
+
+	<script type="text/javascript">
+		var dogList = []
+		function makeObject(){
+			var dog = {
+				name: document.getElementById('inputName').value,
+				breed: document.getElementById('inputBreed').value,
+				height: document.getElementById('inputHeight').value,
+				weight: document.getElementById('inputWeight').value,
+			}
+			/*
+			console.log(dog)
+			//How to describe dog just created.
+			document.getElementById('display').innerHTML = "Your dog " + dog.name + " is a " + dog.breed;
+			*/
+
+			//use to add object to empty array, next step create button
+			dogList.push(dog);
+			console.log(dogList);
+		}
+
+		function displayDogList(){
+			//create loop to go through array (dogList) to get all objects
+			for(var i = 0; i < dogList.length ; i++){
+				document.getElementById('display').innerHTML += "Your dog " + dogList[i].name + " is a " + dogList[i].breed + "<br>";
+			}
+		}
+	</script>
+
+	</body>
+</html>

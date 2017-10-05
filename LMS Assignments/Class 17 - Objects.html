@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//Find average of people's height
+				//Algorithm: find sum of people's height
+				//then, divide by number of people
+
+			var people = [
+				{name: 'Tyrone', height: 6},
+				{name: 'Jill', height: 5.2},
+				{name: 'Erica', height: 5.7},
+				{name: 'Pedro', height: 6.6},
+				{name: 'Osama', height: 4},
+			];
+			var total = 0; //for summation
+			for(var i = 0; i < people.length; i++){
+				total += people[i].height; // to find height element within array
+			}
+			var average = total / people.length;
+			console.log('The average height of people is ' + average);
+			
+
+
+		// OBJECTS
+		//Step 1- Create variable with properties
+			var baby = {
+				name: "Phyllis", 
+				age: 2,
+				favFood: ['carrots', 'peas', 'fish'],
+				cry: function(){
+					console.log("WAAAH");
+				}
+			};
+
+			console.log("The Baby's name is " + baby.name);
+			console.log("The Baby's age is " + baby.age);
+			console.log("The Baby's favorite food is " + baby.favFood.join(' and '));
+			baby.cry();
+
+		</script>
+
+	</body>
+</html>

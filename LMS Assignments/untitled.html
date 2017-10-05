@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<input type="button" value="START GAME" onclick="startGame()">
+<h1 id="displayCard">C</h1>
+<h1 id="displat">C</h1>
+<h1 id="startGame">C</h1>
+<h1 id="newCard">C</h1>
+
+
+<body>
+<script type="text/javascript">
+	
+	var num1 = parseInt(Math.random()*13)
+	var num2 = parseInt(Math.random()*13)
+	var num3 = parseInt(Math.random()*13)
+	var num4 = parseInt(Math.random()*13)
+
+
+
+	var dealer = deck[num1] + deck[num2]
+	var player = deck[num3] + deck[num4]
+
+	document.getElementById("startGame")
+	document.getElementById("newCard")
+	document.getElementById("keepHand")
+
+	var deck = ['A','2','3','4','5','6','7','8','9','10','J','Q','K']
+	var dealer = []
+	var player = []
+
+	function startGame(argument) { //Gives each player 2 randomly selected cards 0-13
+		var  dealer = deck[num2] document.getElementById('displayCard').innerHTML;
+
+		deck[num1] + deck[num2]
+		var player = deck[num3] + deck[num4]
+	}
+
+	function dealCard(argument) { //HIT, adds card (numi) to array 
+		var dealer 
+		
+	}
+
+	function determineWinner(argument) {
+		// body...
+	}
+
+</script>
+
+</body>
+</html>
