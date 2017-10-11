@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="Start Game" onclick="dealCards()">
+		<input type="button" value="HIT" onclick="dealHit()">
+		
+		<input type="button" value="STAY" onclick="keepHand()">
+>
+
+
+
+
+		<h1 id="dealersHand"></h1>
+		<h1 id="playersHand"></h1>
+		<h1 id="display"></h1>
+
+		<script type="text/javascript">
+			//STEP 1 - DEAL CARDS (Start Game Button)
+			//2 for dealer (empty array with 2 random #s)
+			//2 for player (empty array with 2 random #s)
+			//STEP 2 - DEAL 1 CARD (Hit Button)
+			//pushes random new number to existing two numbers in player array
+			//STEP 3 - based on which element is selected at any given time assign value to specific element i.e. "deck[i] == 'K' sum += 10
+			//STEP 4 - check sum to see if it is greater than 21
+			//STEP 5 - create different results for different potential sums 
+
+			//do I need to worry about the dealers sum?
+			//Yes. To compare them As long as it only gets 2 numbers.
+			//what is checking that for me?
+			//do I have to create two seperate variables to store each?
+
+			//STEP - Determines Winner based on value of sum (Stay Button)
+
+			// if(deck[num3] + deck[num4] + deck[num5] <= 21 && > deck[num1] + deck[num2]
+			// document.getElementById('display').innerHTML('YOU WIN!!')
+			//if total is <= 10 then 'A' is 11
+			//else A is 1 
+			//When first two values have 10 in players hand make the A equal 1 else 11
+
+			//stay button 
+			//if player is > 21 
+
+
+
+	
+	
+				var deck = ['A','2','3','4','5','6','7','8','9','10','J','Q','K']
+				//2 empty arrays to rpresent dealer/player
+				var dealer = []
+				var player = []
+
+				//get value of player by using for loop to go through array (deck) staring from index 0 and ending at the end 
+
+				//sets at 0 to add to
+				
+			
+				
+				/*
+				switch(player.length){
+					case 'K':
+						sum += 10
+					case '2':
+						sum += 2
+					case '3':
+						sum += 3
+					case '4':
+						sum += 4
+					case '5':
+						sum += 5
+					case '6':
+						sum += 6
+					case '7':
+						sum += 7
+					case '8':
+						sum += 8
+					default 
+						sum += 9
+						break;
+				}
+
+			/*
+			function evalBoard(){
+				if(sum == K || Q || J){
+					playersum += 10
+				}
+				else if(deck[i] == Q)
+			}
+		*/
+			
+
+			
+			function dealCards(){
+				//clears display on page when you Start Game	
+				//document.getElementById('display').innerHTML = "";
+				//console.log(document.getElementById('display'))
+				console.log("testtt")
+
+				//creates 2 empty arrays for dealer/player hands
+			 	dealer = []
+			 	player = []
+				
+				//gets 4 random numbers and saves in 4 different variables
+				var num1 = parseInt(Math.random()*13);
+				var num2 = parseInt(Math.random()*13);
+				var num3 = parseInt(Math.random()*13); 
+				var num4 = parseInt(Math.random()*13); 
+				
+				//pushes 2 random numbers to dealer/player hand 
+				dealer.push(deck[num1]); 
+				dealer.push(deck[num2]); 
+				player.push(deck[num3]); 
+				player.push(deck[num4]); 
+
+
+				//display both dealer/player hand with 2 random numbers from deck array  
+				document.getElementById('dealersHand').innerHTML = "dealer.toString()";
+				document.getElementById('playersHand').innerHTML = player.toString();
+
+				
+					
+
+			}
+
+			
+			function dealHit(){
+				//gets 1 random number from # 1-13 and then uses that to select a position in the array "deck"
+				var num5 = parseInt(Math.random()*13)
+				//places element in player array
+				player.push(deck[num5]); 
+
+				//displays new card in players hand 
+				document.getElementById('playersHand').innerHTML = player.toString(); 
+
+				var sum = evalPlayer();
+				if(sum > 21){
+					document.getElementById('display').innerHTML = 'BUST - YOU LOSE!!!'
+				}else if(sum == 21){
+					document.getElementById('display').innerHTML = ' YOU WIN!!! '
+				}else{
+					console.log('Keep Playing')
+				}
+			}
+
+
+			//function keepHand(){
+				/*
+				if(deck[num3] + deck[num4] + deck[num5] <= 21 && > deck[num1] + deck[num2]){
+					document.getElementById('display').innerHTML(' YOU WIN!!! ')
+				}else(deck[])
+
+			}
+			
+			*/
+
+					//then use this to append 
+					//sum += deck[i]
+				
+
+		
+
+
+
+
+
+
+		
+			function keepHand(){
+				var sum = evalPlayer()
+				var dsum = evalDealer()
+				if(sum > dsum && <= 21){
+					document.getElementById('display').innerHTML = ' YOU WIN ';
+				}else if(sum == dsum){
+					document.getElementById('display').innerHTML = ' TIE '
+				}else{
+					document.getElementById('display').innerHTML = ' YOU LOSE!!! '
+				}
+
+			}	
+
+			function evalDealer(){
+				var total = 0;
+			    //while(sum <= 21){
+			    for (var i = 0; i < dealer.length; i++){
+			
+					if(dealer[i] == 'K' || dealer[i] == 'Q' || dealer[i] == 'J' || dealer[i] == '10'){
+						total += 10
+						//document.getElementById('playersHand').innerHTML =
+					}else if(dealer[i] == '2'){
+						total += 2
+					}else if(dealer[i] == '3'){
+						total += 3
+					}else if(dealer[i] == '4'){
+						total += 4
+					}else if(dealer[i] == '5'){
+						total += 5
+					}else if(dealer[i] == '6'){
+						total += 6
+					}else if(dealer[i] == '7'){
+						total += 7
+					}else if(dealer[i] == '8'){
+						total += 8
+					}else if(dealer[i] == '9'){
+						total += 9
+					}else{
+						if(total <= 10){
+							total += 11
+						}else{
+							total += 1
+						}
+					}
+				}
+				console.log(total)
+				return total	
+			}
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+	
+			//FIGURES OUT TOTAL OF PLAYERS
+			function evalPlayer(){
+			    var total = 0;
+			    //while(sum <= 21){
+			    for (var i = 0; i < player.length; i++){
+			
+					if(player[i] == 'K' || player[i] == 'Q' || player[i] == 'J' || player[i] == '10'){
+						total += 10
+						//document.getElementById('playersHand').innerHTML =
+					}else if(player[i] == '2'){
+						total += 2
+					}else if(player[i] == '3'){
+						total += 3
+					}else if(player[i] == '4'){
+						total += 4
+					}else if(player[i] == '5'){
+						total += 5
+					}else if(player[i] == '6'){
+						total += 6
+					}else if(player[i] == '7'){
+						total += 7
+					}else if(player[i] == '8'){
+						total += 8
+					}else if(player[i] == '9'){
+						total += 9
+					}else{
+						if(total <= 10){
+							total += 11
+						}else{
+							total += 1
+						}
+					}
+				}
+				console.log(total)
+				return total	
+			}
+			//OPTIONS TO WIN:
+			/*
+			AK
+			AQ
+			AJ
+			A10
+			*/
+	
+		</script>
+
+	</body>
+</html>
